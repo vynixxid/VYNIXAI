@@ -1,0 +1,335 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #141414; /* Sedikit lebih terang dari sebelumnya */
+  color: #e0e0e0;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+/* Header */
+.site-header {
+  background-color: #1a1a1a;
+  padding: 15px 0;
+  border-bottom: 1px solid #333;
+  user-select: none;
+}
+
+.site-header .logo {
+  font-weight: 700;
+  font-size: 28px;
+  color: #ffffff; /* Logo jadi putih */
+  letter-spacing: 4px;
+  user-select: none;
+}
+
+.navigation ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navigation ul li a {
+  color: #bbb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navigation ul li a:hover,
+.navigation ul li a:focus {
+  color: #00ffff;
+  outline: none;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #141414 0%, #222222 100%);
+  padding: 80px 15px 60px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem; /* Kurangi ukuran font */
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 25px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #00ffff;
+  color: #0a0a0a;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #00bfbf;
+  outline: none;
+}
+
+/* Trending Films (Carousel) */
+.trending {
+  background-color: #1a1a1a;
+  padding: 40px 15px;
+}
+
+.trending h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  color: #ddd;
+}
+
+.trending-carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.trending-carousel::-webkit-scrollbar {
+  height: 8px;
+}
+
+.trending-carousel::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 10px;
+}
+
+.trending-card {
+  flex: 0 0 300px;
+  background-color: #222;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  scroll-snap-align: start;
+}
+
+.trending-card:hover,
+.trending-card:focus-within {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+}
+
+.trending-card img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.trending-card h3 {
+  margin: 10px 15px 5px;
+  color: #00ffff;
+  font-size: 1.2rem;
+}
+
+.trending-card p {
+  margin: 0 15px 10px;
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+/* Films */
+.films {
+  background-color: #1a1a1a;
+  padding: 40px 15px;
+}
+
+.films h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  color: #ddd;
+}
+
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.film-card {
+  background-color: #222;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.film-card:hover,
+.film-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+  outline: none;
+}
+
+.film-card img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.film-card h3 {
+  margin: 10px 15px 5px;
+  color: #00ffff;
+  font-size: 1.2rem;
+}
+
+.film-card p {
+  margin: 0 15px 10px;
+  color: #ccc;
+  font-size: 0.9rem;
+  flex-grow: 1;
+}
+
+/* Genres */
+.genres {
+  background-color: #141414;
+  padding: 40px 15px;
+}
+
+.genres h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  color: #ddd;
+}
+
+.genre-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.genre-btn {
+  padding: 10px 20px;
+  background-color: #00ffff;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.genre-btn:hover,
+.genre-btn:focus {
+  background-color: #00bfbf;
+  outline: none;
+}
+
+/* About & Contact */
+.about,
+.contact {
+  padding: 50px 15px;
+  background-color: #141414;
+  text-align: center;
+}
+
+.about h2,
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.about p,
+.contact p {
+  font-size: 1rem;
+  color: #bbb;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact a:hover,
+.contact a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #1a1a1a;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: auto;
+  user-select: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 10px 40px;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .btn-primary {
+    padding: 10px 25px;
+  }
+  .trending h2,
+  .films h2,
+  .genres h2,
+  .about h2,
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+  .trending-card {
+    flex: 0 0 250px;
+  }
+  .film-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
